@@ -1,0 +1,66 @@
+<main class="container-sm text-center d-flex flex-column">
+    <button type="button" class="btn btn-primary col-sm-2 mx-auto btn-lg my-2">HOME</button>
+    <a class="btn btn-primary col-sm-2 mx-auto" href="/panel/agregarNoticia">Agregar Noticia</a>
+    {{#if agregar}}
+    <form action="/panel/agregar" method="post" enctype="multipart/form-data">
+        <div class="row border border-primary rounded p-2 m-1">
+            <div class="col-3 text-start">
+                <label class="d-inline">Titulo Noticia:</label>
+                <input class="form-control d-inline" type="text" name="titulo" value="Ingrese titulo"></input>
+                <label class="d-inline">Imagen:</label>
+                <input class="form-control d-inline" type="file" name="imagen"></input>
+            </div>
+            <div class="col-6">
+                <label class="d-block">Descripcion:</label>
+                <textarea class="form-control" name="cuerpo"
+                    style="height: 90px">Ingrese deascripcion de la noticia.</textarea>
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-evenly">
+                <button class="form-control d-block" type="submit">Agregar Noticia</button>
+            </div>
+        </div>
+    </form>
+    {{/if}}
+    {{#if modificar}}
+    <form action="/panel/modificar" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{modifyNews.id}}">
+        <div class="row border border-primary rounded p-2 m-1">
+            <div class="col-3 text-start">
+                <label class="d-inline">Titulo Noticia:</label>
+                <input class="form-control d-inline" type="text" name="titulo" value="{{modifyNews.titulo}}" />
+                <label class="d-inline">Imagen:</label>
+                <input class="form-control d-inline" type="file" name="imagen"></input>
+                <label>Eliminar imagen<input type="checkbox" name="img_delete" value="1"></input></label>
+                <input type="hidden" name="img_original" value="{{modifyNews.img_id}}"></input>
+            </div>
+            <div class="col-6">
+                <label class="d-block">Descripcion:</label>
+                <textarea class="form-control" name="cuerpo" style="height: 90px">{{modifyNews.cuerpo}}</textarea>
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-evenly">
+                <button class="form-control d-block btn btn-primary" type="submit">Modificar Noticia</button>
+            </div>
+        </div>
+    </form>
+    {{/if}}
+    {{#if error}}
+    <p>{{mensaje}}</p>
+    {{/if}}
+    {{#each news}}
+    <div class="row border border-primary rounded p-2 m-1">
+        <div class="col-10 d-flex new_height_max">
+            <div>
+                <h3>{{titulo}}</h3>
+                <p>{{cuerpo}}</p>
+            </div>
+            <div class="float-start m-2">
+                {{{imagen}}}
+            </div>
+        </div>
+        <div class="col-2 d-flex flex-column justify-content-evenly">
+            <a href="/panel/eliminarNoticia/{{{id}}}" class="form-control d-block btn btn-primary">Eliminar</a>
+            <a href="/panel/modificarNoticia/{{{id}}}" class="form-control d-block btn btn-primary">Modificar</a>
+        </div>
+    </div>
+    {{/each}}
+</main>

@@ -1,12 +1,125 @@
 <main class="container-sm text-center">
    <div class="row justify-content-evenly">
-      {{#each productos }}
-         <div class="col-sm-3 d-flex flex-column no_break">
-            <span>{{desc}}</span>
-            <img src="/img/carpeta/{{{rutaImg}}}" alt={{desc}} class="img_carpeta" />
-            <h6>Embalaje:<strong>{{embalaje}}</strong></h6>
-            <h3>${{precio}}</h3>
+      {{!--ver como se hace el map anidadod en hbs}} --}}
+
+      {{!-- {{#each productos }}
+      <div class="col-sm-3 d-flex flex-column no_break">
+         <span>{{desc}}</span>
+         <img src="/img/carpeta/{{{rutaImg}}}" alt={{desc}} class="img_carpeta" />
+         <h6>Embalaje:<strong>{{embalaje}}</strong></h6>
+         <h3>${{precio}}</h3>
+      </div>
+      {{/each}} --}}
+
+      <div class="row justify-content-evenly">
+         <h2>Galletitas</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>9 de oro clasica x 200grs</span><img
+               src="/img/carpeta/310101.jpg" alt="9 de oro clasica x 200grs" class="img_carpeta">
+            <h6>Embalaje:<strong>20</strong></h6>
+            <h3>$300</h3>
          </div>
-      {{/each}}
-   </div> 
+         <div class="col-sm-3 d-flex flex-column no_break"><span>9 de oro agridulce x 200grs</span><img
+               src="/img/carpeta/310102.jpg" alt="9 de oro agridulce x 200grs" class="img_carpeta">
+            <h6>Embalaje:<strong>20</strong></h6>
+            <h3>$300</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>9 de oro azucarada x 200grs</span><img
+               src="/img/carpeta/310103.jpg" alt="9 de oro azucarada x 200grs" class="img_carpeta">
+            <h6>Embalaje:<strong>20</strong></h6>
+            <h3>$300</h3>
+         </div>
+         <h2>Aderezos</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Natura mayonesa x 250grs</span><img
+               src="/img/carpeta/311101.jpg" alt="Natura mayonesa x 250grs" class="img_carpeta">
+            <h6>Embalaje:<strong>12</strong></h6>
+            <h3>$240</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Natura salsa golf x 250grs</span><img
+               src="/img/carpeta/311102.jpg" alt="Natura salsa golf x 250grs" class="img_carpeta">
+            <h6>Embalaje:<strong>12</strong></h6>
+            <h3>$260</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Natura mostaza x 250grs</span><img
+               src="/img/carpeta/311103.jpg" alt="Natura mostaza x 250grs" class="img_carpeta">
+            <h6>Embalaje:<strong>12</strong></h6>
+            <h3>$310</h3>
+         </div>
+         <h2>Arroz</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Trimacer arroz "0000" x 500grs</span><img
+               src="/img/carpeta/530101.jpg" alt="Trimacer arroz &quot;0000&quot; x 500grs" class="img_carpeta">
+            <h6>Embalaje:<strong>10</strong></h6>
+            <h3>$90</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Trimacer arroz "0000" x 1KG</span><img
+               src="/img/carpeta/530302.jpg" alt="Trimacer arroz &quot;0000&quot; x 1KG" class="img_carpeta">
+            <h6>Embalaje:<strong>10</strong></h6>
+            <h3>$190</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Trimacer arroz integral x 500grs</span><img
+               src="/img/carpeta/530201.jpg" alt="Trimacer arroz integral x 500grs" class="img_carpeta">
+            <h6>Embalaje:<strong>10</strong></h6>
+            <h3>$320</h3>
+         </div>
+         <h2>Harinas</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Chacabuco harina comun x 1 kg</span><img
+               src="/img/carpeta/30101.jpg" alt="Chacabuco harina comun x 1 kg" class="img_carpeta">
+            <h6>Embalaje:<strong>10</strong></h6>
+            <h3>$160</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Chacabuco harina leudante x 1 kg</span><img
+               src="/img/carpeta/30301.jpg" alt="Chacabuco harina leudante x 1 kg" class="img_carpeta">
+            <h6>Embalaje:<strong>10</strong></h6>
+            <h3>$190</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Chacabuco harina "0000" x 1 kg</span><img
+               src="/img/carpeta/30201.jpg" alt="Chacabuco harina &quot;0000&quot; x 1 kg" class="img_carpeta">
+            <h6>Embalaje:<strong>10</strong></h6>
+            <h3>$170</h3>
+         </div>
+         <h2>Copetin</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Crieky mani salado x 1kg</span><img
+               src="/img/carpeta/220101.jpg" alt="Crieky mani salado x 1kg" class="img_carpeta">
+            <h6>Embalaje:<strong>10</strong></h6>
+            <h3>$340</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Crieky puflitos x 1kg</span><img
+               src="/img/carpeta/220102.jpg" alt="Crieky puflitos x 1kg" class="img_carpeta">
+            <h6>Embalaje:<strong>6</strong></h6>
+            <h3>$750</h3>
+         </div>
+         <h2>Conservas</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>De La Huerta pure de tomate x 500grs</span><img
+               src="/img/carpeta/220103.jpg" alt="De La Huerta pure de tomate x 500grs" class="img_carpeta">
+            <h6>Embalaje:<strong>12</strong></h6>
+            <h3>$260</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>De La Huerta pure de tomate x 180grs</span><img
+               src="/img/carpeta/220104.jpg" alt="De La Huerta pure de tomate x 180grs" class="img_carpeta">
+            <h6>Embalaje:<strong>18</strong></h6>
+            <h3>$130</h3>
+         </div>
+         <h2>Limpieza</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Ayudin lavandina x 1L</span><img
+               src="/img/carpeta/410101.jpg" alt="Ayudin lavandina x 1L" class="img_carpeta">
+            <h6>Embalaje:<strong>15</strong></h6>
+            <h3>$230</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Ayudin lavandina x 2L</span><img
+               src="/img/carpeta/410102.jpg" alt="Ayudin lavandina x 2L" class="img_carpeta">
+            <h6>Embalaje:<strong>8</strong></h6>
+            <h3>$450</h3>
+         </div>
+         <h2>Perfumeria</h2>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Dove antitranspirante x 150ml</span><img
+               src="/img/carpeta/410103.jpg" alt="Dove antitranspirante x 150ml" class="img_carpeta">
+            <h6>Embalaje:<strong>12</strong></h6>
+            <h3>$330</h3>
+         </div>
+         <div class="col-sm-3 d-flex flex-column no_break"><span>Dove rollon antitranspirante x110</span><img
+               src="/img/carpeta/410104.jpg" alt="Dove  rollon antitranspirante x110" class="img_carpeta">
+            <h6>Embalaje:<strong>12</strong></h6>
+            <h3>$300</h3>
+         </div>
+      </div>
+   </div>
 </main>

@@ -23,7 +23,6 @@ function App() {
     vendedor: false
   })
 
-
   const handleChange = (e) => {
     const { name, value } = e.target
     setBody({

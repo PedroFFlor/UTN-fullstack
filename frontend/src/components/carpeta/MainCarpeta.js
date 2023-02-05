@@ -27,10 +27,10 @@ const MainCarpeta = (props) => {
                 loading ? 'Cargando novedades' : <>
                     <div className="row justify-content-evenly">
                         {
-                            rubros.map(rubro => {
+                            rubros.map((rubro, index) => {
                                 return (
                                     <>
-                                        <h2>{rubro}</h2>
+                                        <h2 key={index}>{rubro}</h2>
                                         {
                                             productos.map((prod, index) => {
                                                 return prod.rubro === rubro && (

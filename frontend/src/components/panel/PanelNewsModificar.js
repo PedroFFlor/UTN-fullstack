@@ -70,7 +70,6 @@ const PanelNewsModificar = props => {
                 <label className="d-inline">Imagen:</label>
                 <input className="form-control d-inline" type="file" name="imagen" onChange={handleChangeImg} />
                 <label>Eliminar imagen<input type="checkbox" name="img_delete" onChange={handleChangeDelImg} ></input></label>
-                {/* <input type="hidden" id="img_original" name="img_original" defaultValue={`${body.img_id}`} /> */}
             </div>
             <div className="col-6">
                 <label className="d-block">Descripcion:</label>

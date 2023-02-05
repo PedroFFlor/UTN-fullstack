@@ -2,7 +2,6 @@ import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { useState } from "react";
 import axios from 'axios'
-
 import Home from './pages/Home';
 import Ofertas from './pages/Ofertas';
 import Carpeta from './pages/Carpeta';
@@ -33,7 +32,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+ 
     setBody({ 
       ...body,
       [e.target.user.name]: e.target.user.value,
@@ -50,7 +49,7 @@ function App() {
       error: res.data.error || false,
       vendedor: res.data.vendedor || false
     })
-
+    
   }
   const logout = async () => {
 

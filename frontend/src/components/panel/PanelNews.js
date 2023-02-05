@@ -65,12 +65,12 @@ const PanelNews = props => {
             {
                 loading ? 'Cargando novedades' : <>
                     {
-                        news.map((item, index) => {
+                        news.map((item, i) => {
                             let hayImg = true
-                            if (item.imagen === '') { hayImg = false } else { hayImg = true }
+                            if (item.imagen === '') { hayImg = false }
                             return (
                                 <>
-                                    <div key={index} className="row border border-primary rounded p-2 m-1 width100" >
+                                    <div className="row border border-primary rounded p-2 m-1 width100" key={i}>
                                         <div className="col-sm-10 d-flex new_height_max">
                                             {
                                                 hayImg ? <>

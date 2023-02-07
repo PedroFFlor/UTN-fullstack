@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 
 
@@ -29,24 +29,21 @@ const MainCarpeta = (props) => {
                         {
                             rubros.map((rubro, index) => {
                                 return (
-                                    <>
+                                    <Fragment key={index}>
                                         <h2 key={index}>{rubro}</h2>
                                         {
-                                            productos.map((prod, index) => {
-                                                return prod.rubro === rubro && (
-                                                    <>
-                                                        <div className="col-sm-3 d-flex flex-column no_break" key={index}>
-                                                            <span>{prod.desc}</span>
-                                                            <img src={`/img/carpeta/${prod.rutaImg}`} alt={prod.desc} className="img_carpeta" />
-                                                            <h6>Embalaje:<strong>{prod.embalaje}</strong></h6>
-                                                            <h3>${prod.precio}</h3>
-                                                        </div>
-
-                                                    </>
+                                            productos.map((prod, i) => {
+                                                return prod.rubro === rubro && (                                                
+                                                    <div key={i} className="col-sm-3 d-flex flex-column no_break" >
+                                                        <span>{prod.desc}</span>
+                                                        <img src={`/img/carpeta/${prod.rutaImg}`} alt={prod.desc} className="img_carpeta" />
+                                                        <h6>Embalaje:<strong>{prod.embalaje}</strong></h6>
+                                                        <h3>${prod.precio}</h3>
+                                                    </div>                                                    
                                                 )
                                             })
                                         }
-                                    </>
+                                    </Fragment>
                                 )
                             })
                         }

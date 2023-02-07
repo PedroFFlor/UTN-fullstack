@@ -65,37 +65,35 @@ const PanelNews = props => {
             {
                 loading ? 'Cargando novedades' : <>
                     {
-                        news.map((item, i) => {
+                        news.map(item => {
                             let hayImg = true
                             if (item.imagen === '') { hayImg = false }
                             return (
-                                <>
-                                    <div className="row border border-primary rounded p-2 m-1 width100" key={i}>
-                                        <div className="col-sm-10 d-flex new_height_max">
-                                            {
-                                                hayImg ? <>
-                                                    <div className="col-sm-6">
-                                                        <h3>{item.titulo}</h3>
-                                                        <p>{item.cuerpo}</p>
-                                                    </div>
-                                                    <div className="col-sm-4">
-                                                        <img src={item.imagen} className="float-start m-2" alt="Noticia" />
-                                                    </div>
-                                                </> : <>
-                                                    <div className="col-sm-10">
-                                                        <h3>{item.titulo}</h3>
-                                                        <p>{item.cuerpo}</p>
-                                                    </div>
-                                                </>
-                                            }
-                                        </div>
-                                        <input type="hidden" id="img_original" name="img_original" value={`${item.img_id}`} />
-                                        <div className="col-sm-2 d-flex flex-column justify-content-evenly" >
-                                            <button className="form-control d-block btn btn-primary" onClick={e => handleClickEliminar(item.id)}>Eliminar</button>
-                                            <button className="form-control d-block btn btn-primary" onClick={e => handleClickModificar(item.id)}>Modificar</button>
-                                        </div>
+                                <div key={item.id} className="row border border-primary rounded p-2 m-1 width100" >
+                                    <div className="col-sm-10 d-flex new_height_max">
+                                        {
+                                            hayImg ? <>
+                                                <div className="col-sm-6">
+                                                    <h3>{item.titulo}</h3>
+                                                    <p>{item.cuerpo}</p>
+                                                </div>
+                                                <div className="col-sm-4">
+                                                    <img src={item.imagen} className="float-start m-2" alt="Noticia" />
+                                                </div>
+                                            </> : <>
+                                                <div className="col-sm-10">
+                                                    <h3>{item.titulo}</h3>
+                                                    <p>{item.cuerpo}</p>
+                                                </div>
+                                            </>
+                                        }
                                     </div>
-                                </>
+                                    <input type="hidden" id="img_original" name="img_original" value={`${item.img_id}`} />
+                                    <div className="col-sm-2 d-flex flex-column justify-content-evenly" >
+                                        <button className="form-control d-block btn btn-primary" onClick={e => handleClickEliminar(item.id)}>Eliminar</button>
+                                        <button className="form-control d-block btn btn-primary" onClick={e => handleClickModificar(item.id)}>Modificar</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
